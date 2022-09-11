@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>Placements</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    </head>
+    <style>
+      body{
+          background-image:url(pla.jpg);
+          background-size: cover;
+          background-repeat: no-repeat;
+      }
+  </style>
+    <body style="text-align:center;">
+      <h1 style="color:blue;">Placements Overview</h1>
+      <p style="font-size:25px; color:white">The Training and Placement Cell of SNIST has emerged as one of the most happening destinations for many national and multinational organizations for recruiting fresh talent nurtured in the campus. In our journey towards excellence, the management, faculty and the placement department work in close coordination to achieve the desired targets of student employment. Regular mentoring and one-on-one counselling are provided to students facing difficulty in the recruitment process.</p>
+      <h3 style="color: white;">1)Placements over the last 7 years have been growing consistently with an average growth  rate of 42.9%.</h3>
+      <h3 style="color:white">2)Even in times of recession caused by Lehman effect , SNIST maintained a strong recruitment rate of 593/year. </h3>
+      <div style="color:white; margin-left:30%; ">
+        <canvas id="myChart" style="width:50%;max-width:600px;"></canvas>
+      </div>
+      <script>
+      var xValues = ["Accenture", "Wipro", "TCS", "Amazon", "Infosys"];
+      var yValues = [155, 200, 300, 9, 150];
+      var barColors = [
+        "#b91d47",
+        "#00aba9",
+        "#2b5797",
+        "#e8c3b9",
+        "#1e7145"
+      ];
+      
+      new Chart("myChart", {
+        type: "bar",
+        data: {
+          labels: xValues,
+          datasets: [{
+            backgroundColor: barColors,
+            data: yValues
+          }]
+        },
+        options: {
+          title: {
+            display: true,
+            text: "Placement of 2021 batch",
+            fontColor: "white"
+          },
+          scales: { 
+            yAxes: [{
+                ticks: {
+                    fontColor: "white",
+                    beginAtZero: true
+                }
+            }],
+            xAxes: [{
+                ticks: {
+                    fontColor: "whitw",
+                    beginAtZero: true
+                }
+            }]
+        }
+         
+      }
+      });
+      </script>
+      <br>
+      <br>
+      <h1 style="color:white;">Placements of 2021 Batch:</h1>
+      <iframe frameborder="0" height="500" scrolling="no" src="Placements.pdf" style="border:1px solid black;" width="860px"></iframe>
+      </body>
+      </html>
+   

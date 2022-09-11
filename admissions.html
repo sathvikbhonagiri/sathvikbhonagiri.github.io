@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admissions</title>
+    <link rel="stylesheet" href="appli.css"/>
+    <link  href="page2.html">
+    <style>
+        body{
+            background-image:url(h.jpeg);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        #di
+        {
+            color:white;
+            background-color: black;
+            margin-top:0%;
+             margin-left:40%;
+            width:300px;
+            padding-right:40px;
+            opacity:0.7;
+        }
+    </style>
+</head>
+<body>
+    <h3 style="color:black;">Contact for Admissions: </h3>
+    <h3 style="color:black;">Corporate Office Address and Contact Numbers  regarding  admissions:</h3>
+    <div id="di">
+    <ul style=" list-style:none;" id="add">
+        <li>1-2-288/23/1</li>
+        <li>Indira Park Cross Road, </li>
+        <li>Opposite GOLDEN Bakery,</li>
+        <li>Domalguda,</li>
+        <li>Hyderabad - 500029</li>
+        <li>Telangana, India.</li>
+    </ul>
+    </div>
+    <h3 style="color:white;">previous eamcet ranks :</h3>
+    <iframe frameborder="0" height="500px" scrolling="no" src="eamcetranks.pdf" style="border:1px solid black;" width="860px" id="data"></iframe>
+    <h3 style="color:white;">For B catogery admissions fill this form:</h3>
+    <h3 style="color:white;">STUDENT REGISTRATION FORM</h3>
+    <form id="myform" action="https://sheetdb.io/api/v1/86kt1tne6k7ia" method="post" id="sheetdb.form">
+        <div id="container">
+        <div id="1">
+        <label for="myform_Name">Name:</label>
+        <input type="text" name="data[Name]" maxlength="30" id="name" pattern="^[A-Za-z\s]{1,}[\.]{0,1}[A-Za-z\s]{0,}$" required/>
+        </div>
+        <div id="2">
+        <label for="myform_phone">Phone:</label>
+        <input type="tel" id="myform_phone" name="data[Phone]" pattern="[0-9]{10}" required />
+        </div>
+        <div id="3">
+        <label for="myform_email">Email:</label>
+        <input type="email" id="myform_email" name="data[Email]" required/>
+        </div>
+        <div id="4">
+        <label for="myform_jee">Jee Score:</label>
+        <input type="text" id="myform_jee" name="data[Jee Score]"required />
+        </div>
+        <div id="5">
+        <label for="myform_gender1">Gender :</label>
+        <input type="radio" id="Male" name="data[Gender]" value="Male"/>Male
+		<input type="radio" id="Female"  name="data[Gender]" value="Female"/>Female
+        </div>
+        <div id="6">
+        <label for="myform_gender" name="Branch1">Branch : </label>
+        <input type="radio" id="Cse" name="data[Branch]" value="CSE"/>Cse
+		<input type="radio" id="It" name="data[Branch]" value="IT"/>It
+        <input type="radio" id="Ecm" name="data[Branch]" value="ECM"/>Ecm
+		<input type="radio" id="EEE" name="data[Branch]" value="EEE"/>Eee
+        <input type="radio" id="civil" name="data[Branch]" value="CIVIL"/>Civil
+		<input type="radio" id="Mech" name="data[Branch]" value="MECH"/>Mech
+        </div>
+        <div class="mt-2">
+        <button id="btn" style="margin-left:10%;">Submit</button>
+      </div>
+    </div>
+    </form>
+    <script>
+        var form = document.getElementById('sheetdb-form');
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      fetch(form.action, {
+          method : "POST",
+          body: new FormData(document.getElementById("sheetdb-form")),
+      }).then(
+          response => response.json()
+      ).then((html) => {
+        // you can put any JS code here
+        window.open('page2.html', '_blank');
+      });
+    });
+    </script>
+
+ 
+</body>
+</html>

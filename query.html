@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>Query page</title>
+<link href="page2.html">
+<link href="query.css" rel="stylesheet"/>
+</head>
+<body>
+<div id="updiv">
+  <h1 id="txt">Any QUERY ?</h1>
+</div>
+<div class="container">
+  <form action="https://sheetdb.io/api/v1/kimj2m0d5bbel" method="post" id="sheet.form">
+    <label for="fname">Email ID</label>
+    <input type="email" id="fname" name="data[Email]" placeholder="Your Email Id..">
+
+    <label for="subject">Query</label>
+    <textarea id="subject" name="data[Queries]" placeholder="Write something.." style="height:200px"></textarea>
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+<script>
+  var form = document.getElementById('sheetdb-form');
+form.addEventListener("submit", e => {
+e.preventDefault();
+fetch(form.action, {
+    method : "POST",
+    body: new FormData(document.getElementById("sheetdb-form")),
+}).then(
+    response => response.json()
+).then((html) => {
+  // you can put any JS code here
+  window.open('page2.html', '_blank');
+
+});
+});
+</script>
+</body>
+</html>
